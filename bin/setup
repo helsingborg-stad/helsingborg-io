@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -eu
+
+# Script to setup local development environment.
+
+source .profile.local
+
+./bin/install-luarocks
+
+./bin/kong migrations up -c spec/kong_tests.conf
